@@ -1,0 +1,83 @@
+#include <stdio.h>
+void main() {
+  int num1,num2,opt;
+  printf("Enter the first Integer :");
+  scanf("%d",&num1);
+  printf("Enter the second Integer :");
+  scanf("%d",&num2);
+  
+    printf("\nInput your option :\n");
+    printf("1-Addition.\n2-Substraction.\n3-Multiplication.\n4-Division.\n5-Equal.\n6-notequal.\n7-greater.\n8-smaller.\n9-odd or even(num1).\n10-odd or even(num2).\n11-exit.\n");
+    scanf("%d",&opt);
+    switch(opt) {
+      case 1:
+        printf("The Addition of  %d and %d is: %d\n",num1,num2,num1+num2);
+        break;
+        
+      case 2:
+        printf("The Substraction of %d  and %d is: %d\n",num1,num2,num1-num2);
+        break;
+        
+      case 3:
+        printf("The Multiplication of %d  and %d is: %d\n",num1,num2,num1*num2);
+        break;  
+      
+      case 4:
+        if(num2==0) {
+          printf("The second integer is zero. Divide by zero.\n");
+        } else {
+          printf("The Division of %d  and %d is : %d\n",num1,num2,num1/num2);
+        }  
+        break;
+        
+      case 5: 
+        if(num1==num2){
+          printf("The two numbers %d and %d are equal",num1,num2);
+        }else{
+          printf("The two numbers are not equal");
+        }
+        break; 
+        
+      case 6:
+        if(num1!=num2){
+          printf("The two numbers %d and %d are not equal ",num1, num2);
+        }else{
+          printf("The two numbers are equal");
+        }
+        break;
+      case 7:
+        if(num1>num2){
+          printf("%d is greater than %d",num1,num2);
+        }else{
+          printf("%d is not greater than %d ",num1, num2);
+        }
+        break;
+      case 8:
+        if(num1<num2){
+          printf("%d is smaller than %d",num1,num2);
+        }else{
+          printf("%d is not smaller than %d ",num1, num2);
+        }
+        break;
+      case 9:
+        if(num1%2==0){
+          printf("The number %d is even number",num1);
+        }else{
+          printf("The number %d is odd",num1);
+        }
+        break;
+      case 10:
+        if(num2%2==0){
+          printf("The number %d is even number",num2);
+        }else{
+          printf("The number %d is odd",num2);
+        }
+        break;
+      case 11:
+        break;
+        
+      default:
+        printf("Input correct option\n");
+        break; 
+    }
+}
