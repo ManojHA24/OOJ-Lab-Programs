@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<math.h>
+void main()
+{
+  float r,h,A,V;
+  int opt;
+  float pi=3.142;
+  printf("Enter the radius and height\n");
+  scanf("%f%f",&r,&h);
+  printf("\n1-Cylinder\n2-Cone\n3-Sphere\n4-Exit\n");
+  scanf("%d",&opt);
+  
+  switch(opt) {
+    case 1:
+     A=(2*pi*r*h)+(2*pi*r*r);
+     V=pi*r*r*h;
+     printf("Area and Volume of cylinder are: %0.2f and %0.2f",A,V);
+     break;
+   
+    case 2:
+     A=pi*r*(r+sqrt(h*h+r*r));
+     V=(pi*r*r*h)/3;
+     printf("Area and Volume of Cone are: %0.2f and %0.2f",A,V);
+     break;
+    
+    case 3:
+     A=4*pi*r*r;
+       V=(4/3)*pi*r*r*r;
+     printf("Area and Volume of Sphere are: %0.2f and %0.2f",A,V);
+     break;
+     
+    case 4:
+     break;
+   
+    default:
+    printf("Invalid option");
+    break;
+  }    
+    
+  
+}
