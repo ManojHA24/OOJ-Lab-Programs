@@ -1,0 +1,87 @@
+import java.util.Scanner;
+class Playerin{
+	String name;
+	int matches_played;
+	int average;
+
+    void cal_average(String nam,int m_p,int avg){
+    	name=nam;
+    	matches_played=m_p;
+    	average=avg;
+    }
+    void printd(){
+    	System.out.println("Player name:"+name);
+    	System.out.println("Number of matches played:"+matches_played);
+    	System.out.println("Average:"+average);
+    }
+
+}
+class Batsman extends Playerin{
+	int runs_scored;
+
+	void getd1(){
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Batsman name");
+		name=sc.next();
+		System.out.println("Enter total matches played by batsman");
+		matches_played=sc.nextInt();
+		System.out.println("Enter total runs scored by batsman");
+		runs_scored=sc.nextInt();
+	}
+	void printd1(){
+		System.out.println("Batsman name:"+name);
+    	System.out.println("Number of matches played:"+matches_played);
+    	System.out.println("Total runs scored:"+runs_scored);
+    	System.out.println("Average runs scored by batsman:"+runs_scored/matches_played);
+	}
+}
+class Bowler extends Playerin{
+	int runs_given;
+
+	void getd2(){
+		Scanner sc1=new Scanner(System.in);
+		System.out.println("Enter Bowler name");
+		name=sc1.next();
+		System.out.println("Enter total matches played by bowler");
+		matches_played=sc1.nextInt();
+		System.out.println("Enter total runs given by bowler");
+		runs_given=sc1.nextInt();
+	}
+	void printd2(){
+		System.out.println("Batsman name:"+name);
+    	System.out.println("Number of matches played:"+matches_played);
+    	System.out.println("Total runs given:"+runs_given);
+    	System.out.println("Average runs given by bowler:"+runs_given/matches_played);
+	}
+}
+
+class PlayerinMain{
+	public static void main(String ss[]){
+		int i;
+		Playerin s=new Playerin();
+		s.cal_average("dhoni",98,75);
+		s.printd();
+
+		Scanner s3=new Scanner(System.in);
+		System.out.println("Enter the number of batsman");
+		int m=s3.nextInt();
+
+		Batsman s1[]=new Batsman[m]; 
+		for(i=0;i<m;i++){
+			System.out.println("Enter the Batsman deatils:"+(i+1));
+			s1[i]=new Batsman();
+			s1[i].getd1();
+			s1[i].printd1();
+		}
+		System.out.println("Enter the number of bowler");
+		int n=s3.nextInt();
+        
+		Bowler s2[]=new Bowler[n];
+		for(i=0;i<n;i++){
+			System.out.println("Enter the Bowler deatils:"+(i+1));
+			s2[i]=new Bowler();
+			s2[i].getd2();
+			s2[i].printd2();
+		}
+	}
+}		
